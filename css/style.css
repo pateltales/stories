@@ -59,20 +59,16 @@ a      { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow-nav);
 }
 
-.nav-brand {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.88);
-  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
-  transition: color 0.4s ease, text-shadow 0.4s ease;
-}
-.nav.scrolled .nav-brand {
-  color: var(--ink);
-  text-shadow: none;
-}
+.nav-brand { line-height: 0; }
 .nav-brand:hover { opacity: 0.6; }
+
+.nav-logo {
+  height: 30px;
+  display: block;
+  filter: invert(1) brightness(2); /* white on dark */
+  transition: filter 0.4s ease;
+}
+.nav.scrolled .nav-logo { filter: none; } /* dark on frosted */
 
 .nav-back {
   font-size: 0.75rem;
@@ -93,9 +89,14 @@ a      { color: inherit; text-decoration: none; }
   text-shadow: none;
 }
 
+/* On scrolled nav (story/submit pages), back arrow is dark */
+.nav.scrolled .nav-back { color: var(--ink); text-shadow: none; }
+
 /* === HERO (dark, matches main site gallery heroes) === */
 .hero {
-  background: #111;
+  background-color: #111; /* fallback while image loads */
+  background-size: cover;
+  background-position: center 42%;
   height: 62vh;
   min-height: 380px;
   display: flex;
