@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PatelTales — Stories</title>
+  <meta name="description" content="A personal collection of stories and moments by Manu Patel.">
+  <meta property="og:title"       content="PatelTales — Stories">
+  <meta property="og:description" content="A personal collection of stories and moments.">
+  <meta property="og:type"        content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" aria-label="PatelTales home">
+        PatelTales
+        <div class="nav-tagline">Stories</div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <p class="hero-ornament">❧</p>
+    <p class="hero-label">A Personal Collection</p>
+    <h1 class="hero-title">Stories</h1>
+    <p class="hero-subtitle">Moments captured in words, shared with care.</p>
+    <div class="hero-rule"></div>
+  </header>
+
+  <!-- ── Stories ── -->
+  <main class="stories-section" id="main-content">
+
+    <div id="loading" class="loading" role="status" aria-label="Loading stories">
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div id="stories-container" style="display:none">
+      <p class="section-label">Latest</p>
+      <div id="featured-story"></div>
+
+      <p class="section-label" id="more-label" style="display:none">More Stories</p>
+      <div class="story-grid" id="story-grid"></div>
+    </div>
+
+    <div id="empty-state" class="empty-state" style="display:none">
+      <p class="empty-state-title">The pages are blank for now.</p>
+      <p>The first story is waiting to be told.</p>
+    </div>
+
+    <div id="error-state" class="empty-state" style="display:none">
+      <p class="empty-state-title">Something went wrong.</p>
+      <p>Could not load stories. Please check back later.</p>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <p>PatelTales &mdash; All rights reserved</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
