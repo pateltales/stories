@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Submit — PatelTales</title>
-  <!-- Keep this page out of search indexes -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,52 +11,42 @@
 </head>
 <body>
 
-  <!-- ─────────────────────────────────────────────────────────────────────
-       Gate Overlay
-       Shown automatically if ?k= URL param is absent or incorrect.
-       submit.js hides it as soon as the key is verified.
-  ──────────────────────────────────────────────────────────────────────── -->
+  <!-- ── Gate Overlay (dark, matches main site #111 sections) ── -->
   <div class="gate-overlay" id="gate-overlay" role="dialog" aria-modal="true" aria-label="Access gate">
     <div class="gate-card">
-      <p class="gate-ornament">❧</p>
       <h1 class="gate-title">PatelTales</h1>
       <p class="gate-subtitle">Private Access</p>
       <input
         type="password"
         class="gate-input"
         id="gate-input"
-        placeholder="Enter your access key"
+        placeholder="Enter access key"
         autocomplete="off"
         aria-label="Access key"
       >
-      <button class="btn btn-primary" onclick="attemptGateUnlock()" style="margin-top:0">
-        Enter
-      </button>
+      <button class="btn btn-primary" onclick="attemptGateUnlock()">Enter</button>
       <p class="gate-error" id="gate-error" role="alert"></p>
     </div>
   </div>
 
-  <!-- ── Navigation ── -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-back" aria-label="Back to all stories">All Stories</a>
-      <a href="index.html" class="nav-brand">PatelTales</a>
-    </div>
+  <!-- Nav always frosted (no dark hero on this page) -->
+  <nav class="nav scrolled" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-back">All Stories</a>
+    <a href="index.html" class="nav-brand">PatelTales</a>
   </nav>
 
-  <!-- ── Submission Form ── -->
+  <!-- ── Form ── -->
   <div class="submit-container">
 
     <div class="submit-header">
+      <p class="submit-eyebrow">PatelTales</p>
       <h1 class="submit-title">New Story</h1>
-      <p class="submit-subtitle">Share a moment</p>
     </div>
 
     <form id="story-form" novalidate>
 
-      <!-- Title -->
       <div class="form-group">
-        <label class="form-label" for="story-title">Story Title</label>
+        <label class="form-label" for="story-title">Title</label>
         <input
           type="text"
           id="story-title"
@@ -68,21 +57,19 @@
         >
       </div>
 
-      <!-- Content -->
       <div class="form-group">
-        <label class="form-label" for="story-content">Your Story</label>
+        <label class="form-label" for="story-content">Story</label>
         <textarea
           id="story-content"
           class="form-textarea"
           placeholder="Write your story here…&#10;&#10;Separate paragraphs with a blank line."
           required
         ></textarea>
-        <p class="form-hint">Separate paragraphs with a blank line. They will display beautifully on the story page.</p>
+        <p class="form-hint">Separate paragraphs with a blank line — they display beautifully on the story page.</p>
       </div>
 
-      <!-- Image -->
       <div class="form-group">
-        <label class="form-label">Story Image <span style="font-weight:300;opacity:.6">(optional)</span></label>
+        <label class="form-label">Image <span style="font-weight:300;color:var(--ink-light)">(optional)</span></label>
         <div
           class="image-upload-area"
           id="upload-area"
@@ -93,27 +80,19 @@
           onkeydown="if(event.key==='Enter'||event.key===' ')document.getElementById('image-input').click()"
         >
           <div id="upload-placeholder">
-            <div class="upload-icon">🖼</div>
+            <div class="upload-icon">↑</div>
             <p class="upload-text">
               Click or drag an image here<br>
-              <span style="opacity:.55;font-size:.85em">JPG, PNG, or WebP — max 5 MB</span>
+              <span style="opacity:.6;font-size:.85em">JPG, PNG, or WebP — max 5 MB</span>
             </p>
           </div>
           <img id="image-preview" class="image-preview" alt="Preview">
         </div>
-        <input
-          type="file"
-          id="image-input"
-          accept="image/jpeg,image/png,image/webp"
-          style="display:none"
-          aria-hidden="true"
-        >
+        <input type="file" id="image-input" accept="image/jpeg,image/png,image/webp" style="display:none" aria-hidden="true">
       </div>
 
-      <!-- Feedback message -->
       <div id="submit-message" class="submit-message" role="alert"></div>
 
-      <!-- Submit -->
       <button type="submit" class="btn btn-primary" id="submit-btn">
         Publish Story
       </button>
@@ -123,7 +102,7 @@
 
   <!-- ── Footer ── -->
   <footer class="footer">
-    <p>PatelTales &mdash; Private Admin</p>
+    <p>PatelTales &mdash; Private</p>
   </footer>
 
   <!-- Scripts -->
